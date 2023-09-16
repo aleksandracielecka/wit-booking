@@ -49,6 +49,7 @@ public class ItemRepositoryImpl implements ItemRepository {
             return null;
         } catch(NonUniqueResultException e) {
             return -1L;
+
         }
 
     }
