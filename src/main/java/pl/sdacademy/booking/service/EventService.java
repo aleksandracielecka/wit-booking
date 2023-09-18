@@ -28,7 +28,9 @@ public class EventService {
         List<EventEntity> eventEntities = eventRepository.findAll();
         for(EventEntity event: eventEntities){
             result.add(EventDto.builder()
-                    .item(event.getItem())
+//                    .item(event.getItem())
+                    .name(event.getItem().getName())
+                    .price(event.getItem().getPrice())
                     .from(event.getFrom())
                     .to(event.getTo())
                     .build());

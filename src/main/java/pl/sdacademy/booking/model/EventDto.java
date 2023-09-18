@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.ToString;
 import pl.sdacademy.booking.data.ItemEntity;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Builder
@@ -18,9 +19,11 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 public class EventDto {
 
-    private long id;
+//    private long id;
+//    private ItemEntity item;
 
-    private ItemEntity item;
+    private String name;
+    private BigDecimal price;
     private LocalDateTime from;
     private LocalDateTime to;
 
