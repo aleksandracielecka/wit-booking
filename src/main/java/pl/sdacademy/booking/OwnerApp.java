@@ -1,5 +1,6 @@
 package pl.sdacademy.booking;
 
+import pl.sdacademy.booking.controller.EventController;
 import pl.sdacademy.booking.controller.ItemController;
 
 import java.util.Scanner;
@@ -17,6 +18,8 @@ public class OwnerApp {
         if (inputValue == 1) {
             new ItemController().presentCatalog();
         }
-
+        if (inputValue == 2) {
+            new EventController().presentEventSchedule();
+        }
     }
 }
