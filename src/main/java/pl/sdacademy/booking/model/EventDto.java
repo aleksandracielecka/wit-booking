@@ -4,10 +4,7 @@ package pl.sdacademy.booking.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 import pl.sdacademy.booking.data.ItemEntity;
 
 import java.math.BigDecimal;
@@ -17,14 +14,12 @@ import java.time.LocalDateTime;
 @Getter
 @ToString
 @EqualsAndHashCode
+@Data
 public class EventDto {
 
-//    private long id;
-//    private ItemEntity item;
-
-    private String name;
-    private BigDecimal price;
-    private LocalDateTime from;
-    private LocalDateTime to;
-
+    private long id;
+    private String itemName;
+    private BigDecimal itemPrice;
+    private LocalDateTime fromTime;
+    private LocalDateTime toTime;
 }
