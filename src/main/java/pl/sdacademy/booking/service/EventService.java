@@ -29,6 +29,7 @@ public class EventService {
 
         for (EventEntity entity : eventEntities) {
             result.add(EventDto.builder()
+                    .id(entity.getId())
                     .itemName(entity.getItem().getName())
                     .itemPrice(entity.getItem().getPrice())
                     .fromTime(entity.getFrom())
