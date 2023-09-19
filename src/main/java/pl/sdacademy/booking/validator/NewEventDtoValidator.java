@@ -16,6 +16,7 @@ public class NewEventDtoValidator {
         if (newEventDto.getToTime() == null) {
             result.add("To is null");
         }
+        //warunki
 
         //from and to are opposite
         //date from the past

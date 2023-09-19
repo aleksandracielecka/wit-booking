@@ -11,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class NewEventDtoValidatorTest {
     @Test
+
     void shouldCheckThatFromIsNull() {
         NewEventDto input = NewEventDto.builder()
                 .itemName("przyklad")
@@ -22,6 +23,7 @@ class NewEventDtoValidatorTest {
                 hasSize(1)
                 .contains("From is null");
     }
+    //kolejny test
     @Test
     void shouldCheckThatToIsNull() {
         NewEventDto input = NewEventDto.builder()
