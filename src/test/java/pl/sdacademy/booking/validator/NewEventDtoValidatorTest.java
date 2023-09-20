@@ -49,4 +49,17 @@ class NewEventDtoValidatorTest {
                 .hasSize(2)
                 .contains("To and from is null");
     }
+    @Test
+    void shouldCheckThatEventIsNull(){
+        NewEventDto input = NewEventDto.builder()
+                .itemName(null)
+                .fromTime(LocalDateTime.of(2023, 9, 19, 19, 57))
+                .toTime(LocalDateTime.of(2023, 9, 19, 19, 57))
+                .build();
+        List<String> results = NewEventDtoValidator.validate(input);
+        assertThat(results).
+                hasSize(1)
+                .contains("Event name is null");
+
+    }
 }
