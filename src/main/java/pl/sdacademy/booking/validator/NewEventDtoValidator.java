@@ -3,6 +3,7 @@ package pl.sdacademy.booking.validator;
 import pl.sdacademy.booking.model.NewEventDto;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,24 +24,22 @@ public class NewEventDtoValidator {
                 result.add("To is before from");
             }
             if (duration.toMinutes() > 30) {
-                result.add("to id before event");
+                result.add("Too long event");
+            }
+
+            //date in the future:
+            if (newEventDto.getFromTime().isBefore(LocalDateTime.now())){
+                result.add("Event begins in the past");
+            }
+
+            //from 8 to 16
+            if (newEventDto.getFromTime().getHour()<8 || newEventDto.getToTime().getHour()>16){
+                result.add("Event is not during opening hours");
             }
         }
-
-            //sesja czas przekracza czas pracy salonu - DO POPRAWY
-            if (newEventDto.getFromTime() != null && newEventDto.getToTime() != null) {
-                Duration durations = Duration.between(newEventDto.getFromTime(), newEventDto.getToTime());
-                if (durations.isNegative()) {
-                    result.add("To is before from");
-                }
-                if (durations.toHours() > 8) {
-                    result.add("Sorry, building is closed");
-                }
-            }
-
-            //sesja bez odwolania sie do produktu
+            //item name is null
             if (newEventDto.getItemName() == null) {
-                result.add("ItemName is null");
+                result.add("Without item");
             }
             return result;
         }
