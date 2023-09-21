@@ -2,7 +2,7 @@ package pl.sdacademy.booking.validator;
 
 import org.junit.jupiter.api.Test;
 import pl.sdacademy.booking.model.NewEventDto;
-//import pl.sdacademy.booking.util.TimeNow;
+import pl.sdacademy.booking.util.TimeNow;
 import pl.sdacademy.booking.util.TimeNowStub;
 
 import static org.assertj.core.api.Assertions.assertThat;
