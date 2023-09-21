@@ -9,7 +9,7 @@ public class EventController {
 
     public EventController() {
         // nienajlepsze rozwiazanie - skrot by moc zaprezentowac pseudo controller
-        this.eventService = new EventService(new EventRepositoryImpl());
+        this.eventService = new EventService(itemRepository, new EventRepositoryImpl());
     }
 
     public void presentEventSchedule() {
