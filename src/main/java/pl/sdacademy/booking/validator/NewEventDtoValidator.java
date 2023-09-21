@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewEventDtoValidator {
-    public static List<String> validate(NewEventDto newEventDto, TimeNowStub newTimeNowStub) {
+    public static List<String> validate(NewEventDto newEventDto) {
         List<String> result = new ArrayList<>();
         if (newEventDto == null) {
             result.add("Event is null");
